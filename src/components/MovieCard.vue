@@ -1,6 +1,9 @@
 <template>
     <div class="movie">
         <ul>
+            <li>
+                <img :src="(`https://image.tmdb.org/t/p/w185/` + `${details.poster_path}`)" alt="">
+            </li>
             <li>Titolo: {{ details.title }}</li>
             <li>Titolo originale: {{ details.original_title }}</li>
             <li>
