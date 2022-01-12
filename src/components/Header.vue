@@ -1,15 +1,22 @@
 <template>
     <header>
         <div class="nav">
-            <input type="text" placeholder="Cerca">
+            <input v-model="userText" type="text" placeholder="Cerca">
 
-            <button>Cerca</button>
+            <button @click="$emit('searchDone', userText)">Cerca</button>
         </div>
     </header>
 </template>
 
 <script>
-
+export default {
+    name: 'Header',
+    data: function() {
+        return {
+            userText: '',
+        }
+    }
+}
 </script>
 
 
