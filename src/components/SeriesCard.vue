@@ -1,8 +1,8 @@
 <template>
-    <div class="movie">
+    <div class="series">
         <ul>
-            <li>Titolo: {{ details.title }}</li>
-            <li>Titolo originale: {{ details.original_title }}</li>
+            <li>Titolo: {{ details.name }}</li>
+            <li>Titolo originale: {{ details.original_name }}</li>
             <li>
                 <div>Lingua:<img :src="require(`../assets/${details.original_language}.png`)" alt=""></div>
             </li>
@@ -12,18 +12,18 @@
     </div>
 </template>
 
+
 <script>
 export default {
-    name: "MovieCard",
+    name: "SeriesCard",
     props: {
         details: Object,
     },
 };
 </script>
 
-
-<style scoped lang="scss">
-.movie {
+<style scoped lang="scss" >
+.series {
     margin: 15px;
     border: 1px solid black;
 }
@@ -31,7 +31,6 @@ export default {
 li {
     list-style: none;
 }
-
 li div img {
     margin-left: 5px;
     width: 18px;
