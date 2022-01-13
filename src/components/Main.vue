@@ -1,10 +1,13 @@
 <template>
     <main>
         <h2>Film</h2>
-        <MovieCard v-for="movie in moviesList" :key="movie.id" :details="movie" />
-
+        <div class="movies-container">
+            <MovieCard v-for="movie in moviesList" :key="movie.id" :details="movie" />
+        </div>
         <h2>Series</h2>
-        <SeriesCard v-for="series in seriesList" :key="series.id" :details="series" />
+        <div class="series-container">
+            <SeriesCard v-for="series in seriesList" :key="series.id" :details="series" />
+        </div>
     </main>
 </template>
 
@@ -25,3 +28,16 @@ export default {
     }
 }
 </script>
+
+
+<style lang="scss" scoped>
+.movies-container {
+    display: flex;
+    overflow-x: auto;
+}
+
+.series-container {
+    display: flex;
+    overflow-x: auto;
+}
+</style>
