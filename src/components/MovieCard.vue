@@ -1,21 +1,26 @@
 <template>
     <div class="movie">
-        <ul>
-            <li>
-                <img class="poster" :src="(`https://image.tmdb.org/t/p/w300/` + `${details.poster_path}`)" alt="">
-            </li>
-            <li>Titolo: {{ details.title }}</li>
-            <li>Titolo originale: {{ details.original_title }}</li>
-            <li>Data di uscita: {{ details.release_date }}</li>
-            <li>
-                <div>Lingua:<img :src="require(`../assets/${details.original_language}.png`)" alt=""></div>
-            </li>
-            <!-- <li> {{ details.original_language }}</li> -->
-            <li>
-                <i v-for="(star, i) in voteStar" :key="i" class="fas fa-star"></i>
-                <i v-for="(star, j) in (5 - voteStar)" :key="j" class="far fa-star"></i>
-            </li>
-        </ul>
+        <div class="face poster">
+            <div>
+                <img v-if="details.poster_path" :src="(`https://image.tmdb.org/t/p/w300/` + `${details.poster_path}`)" alt="">
+                <img v-else src="../assets/none_poster.png" alt="">
+            </div>
+        </div>
+        <div class="face infos">
+            <ul>
+                <li>Titolo: {{ details.title }}</li>
+                <li>Titolo originale: {{ details.original_title }}</li>
+                <li>Data di uscita: {{ details.release_date }}</li>
+                <li>
+                    <div>Lingua:<img :src="require(`../assets/${details.original_language}.png`)" alt=""></div>
+                </li>
+                <!-- <li> {{ details.original_language }}</li> -->
+                <li>
+                    <i v-for="(star, i) in voteStar" :key="i" class="fas fa-star"></i>
+                    <i v-for="(star, j) in (5 - voteStar)" :key="j" class="far fa-star"></i>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -36,14 +41,42 @@ export default {
 
 <style scoped lang="scss">
 .movie {
-    margin: 15px;
-    border: 1px solid black;
     width: 380px;
     flex-shrink: 0;
+    display: flex;
+}
+
+.face {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infos {
+    display: none;
+
+}
+
+.movie:hover .poster {
+    display: none;
+}
+
+.movie:hover .infos {
+    display: inline-block;
+    border: 1px solid black;
+    margin: 10px;
+    height: 450px;
 }
 
 .poster {
     margin-top: 10px;
+    width: 100%;
+    height: auto;
 }
 
 li {

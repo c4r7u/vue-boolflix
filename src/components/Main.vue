@@ -32,10 +32,10 @@ export default {
 
 <style lang="scss" scoped>
 
-// main {
-//     background-color: #434343;
-//     color: black
-// }
+main {
+    background-color: #434343;
+    color: black
+}
 
 
 .movies-container {
