@@ -2,7 +2,7 @@
     <div class="movie">
         <ul>
             <li>
-                <img :src="(`https://image.tmdb.org/t/p/w300/` + `${details.poster_path}`)" alt="">
+                <img class="poster" :src="(`https://image.tmdb.org/t/p/w300/` + `${details.poster_path}`)" alt="">
             </li>
             <li>Titolo: {{ details.title }}</li>
             <li>Titolo originale: {{ details.original_title }}</li>
@@ -40,6 +40,10 @@ export default {
     border: 1px solid black;
     width: 380px;
     flex-shrink: 0;
+}
+
+.poster {
+    margin-top: 10px;
 }
 
 li {

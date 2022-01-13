@@ -1,10 +1,10 @@
 <template>
     <main>
-        <h2>Film</h2>
+        <!-- <h2>Film</h2> -->
         <div class="movies-container">
             <MovieCard v-for="movie in moviesList" :key="movie.id" :details="movie" />
         </div>
-        <h2>Series</h2>
+        <!-- <h2>Series</h2> -->
         <div class="series-container">
             <SeriesCard v-for="series in seriesList" :key="series.id" :details="series" />
         </div>
@@ -31,6 +31,13 @@ export default {
 
 
 <style lang="scss" scoped>
+
+// main {
+//     background-color: #434343;
+//     color: black
+// }
+
+
 .movies-container {
     display: flex;
     overflow-x: auto;
